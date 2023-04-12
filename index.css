@@ -1,9 +1,14 @@
 /*GENERAL SETTING ----- Major changes to the app*/
-*{
+* {
     box-sizing: border-box;
 }
 
-body, .container, .top-container, .bottom-container, .convert.txt, .last-btn {
+body,
+.container,
+.top-container,
+.bottom-container,
+.convert.txt,
+.last-btn {
     display: flex;
     flex-direction: column;
 }
@@ -18,42 +23,42 @@ body {
 }
 
 .container {
-    max-width:550px;
+    max-width: 550px;
     max-height: 729px;
-    background:#F4F4F4;
+    background: #F4F4F4;
     border: 1px solid #F4F4F4;
 }
 
 h1 {
     margin: 30px 51px;
     font-size: 28px;
-    font-weight: 800; 
+    font-weight: 800;
 }
 
 h3 {
     color: #5A537B;
-    font-size: 20px; 
-    font-weight: 600;  
+    font-size: 20px;
+    font-weight: 600;
 }
 
-p{
-  color: #353535;
-  font-size: 14px;
-  font-weight: 400;
-  margin: 0; 
+p {
+    color: #353535;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
 }
 
 /*TOP PART*/
-.top-container{
+.top-container {
     background: #6943FF;
     text-align: center;
-    color:#FFFFFF;
+    color: #FFFFFF;
     justify-content: center;
     align-items: center;
 }
 
 input {
-    
+
     max-width: 117px;
     max-height: 83px;
     background: #6943FF;
@@ -76,8 +81,8 @@ input {
     padding: 9px 27.5px;
     font-size: 16px;
     font-weight: 500;
-    
-    
+
+
 }
 
 /* BOTTOM PART */
@@ -94,7 +99,7 @@ input {
 
 }
 
-.convert-txt:first-of-type{
+.convert-txt:first-of-type {
     margin-top: 36px;
 }
 
@@ -106,10 +111,11 @@ input {
 .last-btn {
     flex-direction: row-reverse;
 }
+
 .mde-btn {
     width: 12%;
     margin: 0px 10px 10px;
-    background:#F4F4F4;
+    background: #F4F4F4;
     font-size: 10px;
     padding: 5px;
     border-radius: 5px;
@@ -118,7 +124,7 @@ input {
 
 /*DARK MODE CSS */
 .dark-container {
-    background: #1F2937; 
+    background: #1F2937;
 }
 
 .dark-subcontainer {
@@ -130,7 +136,7 @@ input {
 }
 
 .dark-p {
-    color:#FFFFFF;
+    color: #FFFFFF;
 }
 
 .dark-btn {
