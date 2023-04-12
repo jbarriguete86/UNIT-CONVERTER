@@ -1,0 +1,140 @@
+/*GENERAL SETTING ----- Major changes to the app*/
+*{
+    box-sizing: border-box;
+}
+
+body, .container, .top-container, .bottom-container, .convert.txt, .last-btn {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: auto 0;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    max-width:550px;
+    max-height: 729px;
+    background:#F4F4F4;
+    border: 1px solid #F4F4F4;
+}
+
+h1 {
+    margin: 30px 51px;
+    font-size: 28px;
+    font-weight: 800; 
+}
+
+h3 {
+    color: #5A537B;
+    font-size: 20px; 
+    font-weight: 600;  
+}
+
+p{
+  color: #353535;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0; 
+}
+
+/*TOP PART*/
+.top-container{
+    background: #6943FF;
+    text-align: center;
+    color:#FFFFFF;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    
+    max-width: 117px;
+    max-height: 83px;
+    background: #6943FF;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    font-size: 58px;
+    font-weight: 800;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 19px;
+    margin-bottom: 25px;
+}
+
+.cnvrt-btn {
+    background: #FFFFFF;
+    border: #ffffff;
+    border-radius: 5px;
+    margin-bottom: 34px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    padding: 9px 27.5px;
+    font-size: 16px;
+    font-weight: 500;
+    
+    
+}
+
+/* BOTTOM PART */
+.bottom-container {
+    text-align: center;
+}
+
+.convert-txt {
+    background: #FFFFFF;
+    margin: 12.5px 25px;
+    padding-bottom: 18px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.convert-txt:first-of-type{
+    margin-top: 36px;
+}
+
+.convert-txt:last-of-type {
+    margin-bottom: 36px;
+}
+
+/*DARK/LIGHT MODE BUTTON */
+.last-btn {
+    flex-direction: row-reverse;
+}
+.mde-btn {
+    width: 12%;
+    margin: 0px 10px 10px;
+    background:#F4F4F4;
+    font-size: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #6943FF;
+}
+
+/*DARK MODE CSS */
+.dark-container {
+    background: #1F2937; 
+}
+
+.dark-subcontainer {
+    background: #273549;
+}
+
+.dark-h3 {
+    color: #CCC1FF;
+}
+
+.dark-p {
+    color:#FFFFFF;
+}
+
+.dark-btn {
+    background: #1F2937;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}

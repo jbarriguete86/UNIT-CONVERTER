@@ -1,0 +1,36 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            <section class="top-container">
+                <h1>Metric/Imperial Unit Conversion</h1>
+                <input id="input-el"></input>
+                <button id="convert-btn" class="cnvrt-btn">Convert</button>
+            </section>
+            <section class="bottom-container" id="overall-result">
+                <div class="convert-txt" >
+                    <h3>Length(Meter/feet)</h3>
+                    <p id="length-result" class="p-result">__ meters = __ feet | __ feet = __ meters<p>
+                </div>
+                <div class="convert-txt">
+                    <h3>Volume(Liters/Gallons)</h3>
+                    <p id="volume-result" class="p-result">__ liters = __ gallons | __ gallons = __ liters<p>
+                </div>
+                <div class="convert-txt">
+                    <h3>Mass(Kilogram/Pounds)</h3> 
+                    <p id="mass-result" class="p-result">__ kilos = __ pounds | __ pounds =__ kilos<p> 
+                </div>
+                <div class="last-btn">
+            <button id="mode-btn" class="mde-btn">DARK MODE</button>
+            </div>
+            </section>
+            
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
