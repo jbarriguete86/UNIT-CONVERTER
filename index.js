@@ -14,6 +14,7 @@ const modeBtn = document.getElementById("mode-btn")
 const header3 = document.querySelectorAll("h3")
 const paragraphs = document.querySelectorAll(".p-result")
 const resultContainer = document.querySelectorAll(".convert-txt")
+const lastBtnContainer = document.querySelector(".last-btn")
 
 
 
@@ -71,6 +72,8 @@ containerEl.addEventListener("dblclick", (event) => {
 function toggleMode() {
     overallResults.classList.toggle("dark-container")
     modeBtn.classList.toggle("dark-btn")
+    lastBtnContainer.classList.toggle("dark-container")
+
     for (let i = 0; i < paragraphs.length; i++) {
         resultContainer[i].classList.toggle("dark-subcontainer")
         header3[i].classList.toggle("dark-h3")
