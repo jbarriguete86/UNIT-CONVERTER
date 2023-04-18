@@ -18,6 +18,9 @@ const resultContainer = document.querySelectorAll(".convert-txt")
 
 
 convertBtn.addEventListener("click", function () {
+    if (inputEl.value === "" || isNaN(inputEl.value)){
+        alert("You need to enter a number, before pressing 'Convert'")
+    }
     let mynumber = inputEl.value;
     let darkMode = modeBtn.textContent;
     render(mynumber, darkMode);
@@ -25,40 +28,45 @@ convertBtn.addEventListener("click", function () {
 
 
 function render(number, modes) {
-    const operations = [
-        number * 3.281, 
-        number / 3.281, 
-        number * 0.264, 
-        number / 0.264, 
-        number * 2.204, 
-        number / 2.204
-    ]
-    let results = []
-    for (let i = 0; i < operations.length; i++) {
-        results.push(operations[i]) // this part of the code is filling the array to avoid changing the DOM many times
+    const obj = {
+        metersToFeet: number * 3.281,
+        feetToMeeters: number / 3.281,
+        
+        litersToGallon: number * .264,
+        gallonsToLiters: number / .264,
+        
+        kilosToPounds: number  * 2.204,
+        poundsToKilos: number / 2.204
     }
+    modes = modes === "LIGHT MODE" ? true : false
     overallResults.innerHTML = `
-        <div class="convert-txt ${modes === "LIGHT MODE" ? 'dark-subcontainer' : ''}">
-            <h3 class ="${modes === "LIGHT MODE" ? 'dark-h3' : ''}">Length(Meter/feet)</h3>
-            <p id="length-result" class="${modes === "LIGHT MODE" ? 'dark-p' : ''}">${number} meters = ${results[0].toFixed(3)} feet | ${number} feet = ${results[1].toFixed(3)} meters<p>
+        <div class="convert-txt ${modes && 'dark-subcontainer'}">
+            <h3 class ="${modes &&  'dark-h3'}">Length(Meter/feet)</h3>
+            <p id="length-result" class="p-result ${modes &&  'dark-p'}">${number} meters = ${obj.metersToFeet.toFixed(3)} feet | ${number} feet = ${obj.feetToMeeters.toFixed(3)} meters<p>
         </div>
-        <div class="convert-txt ${modes === "LIGHT MODE" ? 'dark-subcontainer' : ''}">
-            <h3 class ="${modes === "LIGHT MODE" ? 'dark-h3' : ''}">Volume(Liters/Gallons)</h3>
-            <p id="volume-result" class="${modes === "LIGHT MODE" ? 'dark-p' : ''}">${number} liters = ${results[2].toFixed(3)} gallons | ${number} gallons = ${results[3].toFixed(3)} liters<p>
+        <div class="convert-txt ${modes &&  'dark-subcontainer'}">
+            <h3 class ="${modes &&  'dark-h3'}">Volume(Liters/Gallons)</h3>
+            <p id="volume-result" class="p-result ${modes &&  'dark-p'}">${number} liters = ${obj.litersToGallon.toFixed(3)} gallons | ${number} gallons = ${obj.gallonsToLiters.toFixed(3)} liters<p>
         </div>
-        <div class="convert-txt ${modes === "LIGHT MODE" ? 'dark-subcontainer' : ''}">
-            <h3 class ="${modes === "LIGHT MODE" ? 'dark-h3' : ''}">Mass(Kilogram/Pounds)</h3> 
-            <p id="mass-result" class="${modes === "LIGHT MODE" ? 'dark-p' : ''}">${number} kilos = ${results[4].toFixed(3)} pounds | ${number} pounds =${results[5].toFixed(3)} kilos<p>
+        <div class="convert-txt ${modes ? 'dark-subcontainer' : ''}">
+            <h3 class ="${modes &&  'dark-h3'}">Mass(Kilogram/Pounds)</h3> 
+            <p id="mass-result" class="p-result  ${modes &&  'dark-p'}">${number} kilos = ${obj.kilosToPounds.toFixed(3)} pounds | ${number} pounds =${obj.poundsToKilos.toFixed(3)} kilos<p>
         </div>
-        <div class="last-btn">
-            <button id="mode-btn" class="mde-btn ${modes === "LIGHT MODE" ? 'dark-btn' : ''}">${modes}</button>
-            </div> `
+ `
 }
 
-//LIGHT/DARK MODE BUTTON --- I couldn't manage to get this work properly. It works if nothings is input, but once I have convert the button will not work. I know that it's because of the DOM manipulation, but couldn't manage to figure it out
+/*LIGHT/DARK MODE BUTTON --- 
+I couldn't manage to get this work properly. It works if nothings is input, but once I have convert the button will not work. I know that it's because of the DOM manipulation, but couldn't manage to figure it out*/
 
 modeBtn.addEventListener("dblclick", toggleMode)
 
+/* const containerEl = document.querySelector(".container");
+
+containerEl.addEventListener("dblclick", (event) => {
+  if (event.target === modeBtn) {
+    toggleMode();
+  }
+}); // this was an attempt to make the toggle button work*/
 
 function toggleMode() {
     overallResults.classList.toggle("dark-container")
