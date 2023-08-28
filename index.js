@@ -85,3 +85,21 @@ function toggleMode() {
         modeBtn.textContent = "DARK MODE"
     }
 }
+
+function FeedHTML(){
+    overallResults.innerHTML =
+      `<div class="convert-txt">
+      <h3>Length(Meter/feet)</h3>
+      <p id="length-result" class="p-result">__ meters = __ feet | __ feet = __ meters<p>
+  </div>
+  <div class="convert-txt">
+      <h3>VOLUME(Liters/Gallons)</h3>
+      <p id="volume-result" class="p-result">__ liters = __ gallons | __ gallons = __ liters<p>
+  </div>
+  <div class="convert-txt">
+      <h3>Mass(Kilogram/Pounds)</h3>
+      <p id="mass-result" class="p-result">__ kilos = __ pounds | __ pounds =__ kilos<p>
+  </div>`
+  }
+  
+  FeedHTML()
